@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-POSTS = [
+posts = [
     {
         'id': 0,
         'location': 'Остров отчаянья',
@@ -46,13 +46,13 @@ POSTS = [
 
 def index(request):
     template = 'blog/index.html'
-    context = {'posts_list': POSTS}
+    context = {'posts_list': posts}
     return render(request, template, context)
 
 
 def post_detail(request, id):
     template = 'blog/detail.html'
-    context = {'post': dict.POSTS.keys()}
+    context = {'post': posts[id]}
     return render(request, template, context)
 
 
